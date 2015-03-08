@@ -22,14 +22,19 @@ module.exports = function(grunt) {
     css_url_replace: {
       task: {
         options: {
-          staticRoot: 'test/fixtures'
+          // 本地文件跟目录对应服务器文件根目录
+          staticRoot: '/',
+          // 本地文件跟目录
+          pathRoot: 'test/fixtures',
+          map: 'test/fixtures/assets.json'
         },
         files: {
           'tmp/replaced_url.css': [
             'test/fixtures/common.css',
             'test/fixtures/with_hash_or_query_string.css',
             'test/fixtures/absolute.css',
-            'test/fixtures/backslashes.css'
+            'test/fixtures/backslashes.css',
+            'test/fixtures/assets.css'
           ]
         },
       },

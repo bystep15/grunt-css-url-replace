@@ -31,7 +31,11 @@ The root static directory in your website
 grunt.initConfig({
   css_url_replace: {
     options: {
-      staticRoot: 'public'
+      // 本地文件跟目录对应服务器文件根目录
+      staticRoot: '/',
+      // 本地文件跟目录
+      pathRoot: 'test/fixtures',
+      map: 'test/fixtures/assets.json'
     },
     files: {
       'dest/build.css': ['css/application.css', 'css/users/default.css']
